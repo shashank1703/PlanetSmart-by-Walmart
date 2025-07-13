@@ -24,7 +24,7 @@ export default function EcoPointsProgress({ points }) {
             <Trophy className="text-yellow-600" size={32} />
           </motion.div>
           <div>
-            <h2 className="text-3xl font-bold text-green-800">{points} EcoPoints</h2>
+            <h2 className="text-3xl font-bold text-green-800">{points} PlanetSmart Points</h2>
             <p className="text-green-600">Your current balance</p>
           </div>
         </div>

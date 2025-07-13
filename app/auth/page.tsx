@@ -61,10 +61,10 @@ export default function AuthPage() {
         >
           <div className="flex items-center justify-center space-x-2 mb-4">
             <Leaf className="text-green-600" size={32} />
-            <span className="text-green-700 text-2xl font-bold">EcoTrust</span>
+            <span className="text-green-700 text-2xl font-bold">PlanetSmart By Walmart</span>
           </div>
           <h1 className="text-3xl font-bold text-green-800 mb-2">
-            {isLogin ? "Welcome Back" : "Join EcoTrust"}
+            {isLogin ? "Welcome Back" : "Join PlanetSmart"}
           </h1>
           <p className="text-green-600">
             {isLogin ? "Sign in to continue your sustainable journey" : "Start making a difference today"}

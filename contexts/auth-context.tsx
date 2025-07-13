@@ -107,7 +107,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Check for stored user data on app load
-    const storedUser = localStorage.getItem("ecotrust_user")
+    const storedUser = localStorage.getItem("planetsmart_user")
     if (storedUser) {
       setUser(JSON.parse(storedUser))
     }
@@ -141,7 +141,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
       
       setUser(userData)
-      localStorage.setItem("ecotrust_user", JSON.stringify(userData))
+      localStorage.setItem("planetsmart_user", JSON.stringify(userData))
       
       setIsLoading(false)
       return { success: true, message: "Login successful!" }
@@ -212,7 +212,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const logout = () => {
     setUser(null)
-    localStorage.removeItem("ecotrust_user")
+    localStorage.removeItem("planetsmart_user")
     window.location.href = "/auth"
   }
 
