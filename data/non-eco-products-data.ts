@@ -1,0 +1,222 @@
+export const nonEcoProductsData = [
+  {
+    id: 1,
+    name: "Disposable Plastic Water Bottles",
+    description: "Single-use plastic water bottles (pack of 24)",
+    price: 12.99,
+    category: "personal",
+    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500",
+    rating: 3,
+    reviews: 89,
+    sustainabilityScore: 15,
+    environmentalImpact: "High plastic waste, contributes to ocean pollution",
+    ecoPoints: -50,
+    tags: ["plastic", "disposable", "water bottles", "single-use"],
+    sustainableAlternative: {
+      productId: 6,
+      name: "Stainless Steel Water Bottle",
+      description: "Reusable insulated water bottle that keeps drinks cold for 24h",
+      price: 39.99,
+      image: "https://image.made-in-china.com/202f0j00VwfbDvrIJtoU/New-Design-500ml-Recycled-SUS304-Insulated-Shinny-Glitter-Bling-Diamond-Stainless-Steel-Rhinestone-Water-Bottle-for-Gifts.webp",
+      savings: "Save $300+ annually and reduce plastic waste by 365 bottles per year"
+    }
+  },
+  {
+    id: 2,
+    name: "Plastic Shopping Bags",
+    description: "Disposable plastic shopping bags (pack of 100)",
+    price: 8.99,
+    category: "home",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500",
+    rating: 2,
+    reviews: 156,
+    sustainabilityScore: 10,
+    environmentalImpact: "Major contributor to landfill waste and ocean pollution",
+    ecoPoints: -75,
+    tags: ["plastic", "shopping bags", "disposable", "single-use"],
+    sustainableAlternative: {
+      productId: 2,
+      name: "Organic Cotton Tote Bag",
+      description: "Reusable shopping bag made from 100% organic cotton",
+      price: 18.99,
+      image: "https://m.media-amazon.com/images/I/71iE3dA33nL._UY1100_.jpg",
+      savings: "Save $200+ annually and eliminate plastic bag waste"
+    }
+  },
+  {
+    id: 3,
+    name: "Disposable Coffee Cups",
+    description: "Single-use coffee cups with plastic lining (pack of 50)",
+    price: 15.99,
+    category: "kitchen",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500",
+    rating: 3,
+    reviews: 234,
+    sustainabilityScore: 20,
+    environmentalImpact: "Non-recyclable due to plastic lining, landfill waste",
+    ecoPoints: -60,
+    tags: ["coffee cups", "disposable", "plastic", "single-use"],
+    sustainableAlternative: {
+      productId: 6,
+      name: "Stainless Steel Water Bottle",
+      description: "Insulated water bottle that keeps drinks cold for 24h",
+      price: 39.99,
+      image: "https://image.made-in-china.com/202f0j00VwfbDvrIJtoU/New-Design-500ml-Recycled-SUS304-Insulated-Shinny-Glitter-Bling-Diamond-Stainless-Steel-Rhinestone-Water-Bottle-for-Gifts.webp",
+      savings: "Save $400+ annually and reduce cup waste by 365 cups per year"
+    }
+  },
+  {
+    id: 4,
+    name: "Plastic Food Storage Bags",
+    description: "Disposable plastic bags for food storage (pack of 100)",
+    price: 9.99,
+    category: "kitchen",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500",
+    rating: 3,
+    reviews: 189,
+    sustainabilityScore: 25,
+    environmentalImpact: "Single-use plastic contributes to microplastics in environment",
+    ecoPoints: -45,
+    tags: ["plastic bags", "food storage", "disposable", "single-use"],
+    sustainableAlternative: {
+      productId: 11,
+      name: "Reusable Silicone Food Bags",
+      description: "Set of 6 reusable silicone bags for food storage",
+      price: 34.99,
+      image: "https://skyshopy.com/cdn/shop/products/05_9b29781a-befd-497f-a985-314b658473c3.jpg?crop=center&height=1500&v=1695131695&width=1500",
+      savings: "Save $150+ annually and eliminate plastic bag waste"
+    }
+  },
+  {
+    id: 5,
+    name: "Disposable Plastic Toothbrushes",
+    description: "Single-use plastic toothbrushes (pack of 12)",
+    price: 6.99,
+    category: "personal",
+    image: "https://images.unsplash.com/photo-1559591935-c7d0b5b8b5b5?w=500",
+    rating: 3,
+    reviews: 267,
+    sustainabilityScore: 30,
+    environmentalImpact: "Plastic waste that takes 400+ years to decompose",
+    ecoPoints: -40,
+    tags: ["plastic", "toothbrushes", "disposable", "oral care"],
+    sustainableAlternative: {
+      productId: 1,
+      name: "Bamboo Toothbrush Set",
+      description: "Biodegradable bamboo toothbrushes with soft bristles",
+      price: 24.99,
+      image: "https://images-cdn.ubuy.co.in/6679506cd7d45554383fd32c-bamboo-toothbrushes-for-adults-10-pcs.jpg",
+      savings: "Save $50+ annually and reduce plastic waste by 12 toothbrushes per year"
+    }
+  },
+  {
+    id: 6,
+    name: "Plastic Wrap",
+    description: "Disposable plastic wrap for food storage (200 sq ft)",
+    price: 4.99,
+    category: "kitchen",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500",
+    rating: 3,
+    reviews: 445,
+    sustainabilityScore: 20,
+    environmentalImpact: "Non-recyclable plastic that ends up in landfills",
+    ecoPoints: -35,
+    tags: ["plastic wrap", "food storage", "disposable", "single-use"],
+    sustainableAlternative: {
+      productId: 4,
+      name: "Beeswax Food Wraps",
+      description: "Reusable food storage wraps made from organic beeswax",
+      price: 32.99,
+      image: "https://images-cdn.ubuy.co.in/634f5d87657bf64d2143e6c3-reusable-beeswax-wrap-beeswax-food.jpg",
+      savings: "Save $100+ annually and eliminate plastic wrap waste"
+    }
+  },
+  {
+    id: 7,
+    name: "Conventional Cotton T-Shirt",
+    description: "Regular cotton t-shirt with high water and pesticide usage",
+    price: 19.99,
+    category: "clothing",
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+    rating: 4,
+    reviews: 178,
+    sustainabilityScore: 35,
+    environmentalImpact: "High water usage and pesticide contamination",
+    ecoPoints: -30,
+    tags: ["cotton", "t-shirt", "conventional", "clothing"],
+    sustainableAlternative: {
+      productId: 7,
+      name: "Organic Hemp T-Shirt",
+      description: "Comfortable t-shirt made from 100% organic hemp",
+      price: 45.99,
+      image: "https://hemptique.com/cdn/shop/files/hemptique-hemp-crew-neck-t-shirt-sage.jpg?v=1725914959&width=1500",
+      savings: "Save 2,700 liters of water per shirt and reduce pesticide use"
+    }
+  },
+  {
+    id: 8,
+    name: "Disposable Razors",
+    description: "Single-use plastic razors (pack of 10)",
+    price: 12.99,
+    category: "personal",
+    image: "https://images.unsplash.com/photo-1559591935-c7d0b5b8b5b5?w=500",
+    rating: 3,
+    reviews: 156,
+    sustainabilityScore: 25,
+    environmentalImpact: "Plastic waste and metal blades in landfills",
+    ecoPoints: -40,
+    tags: ["razors", "disposable", "plastic", "personal care"],
+    sustainableAlternative: {
+      productId: 1,
+      name: "Bamboo Safety Razor",
+      description: "Reusable safety razor with bamboo handle",
+      price: 29.99,
+      image: "https://images-cdn.ubuy.co.in/6679506cd7d45554383fd32c-bamboo-toothbrushes-for-adults-10-pcs.jpg",
+      savings: "Save $200+ annually and eliminate plastic razor waste"
+    }
+  },
+  {
+    id: 9,
+    name: "Chemical Laundry Detergent",
+    description: "Conventional laundry detergent with harsh chemicals",
+    price: 18.99,
+    category: "home",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500",
+    rating: 4,
+    reviews: 234,
+    sustainabilityScore: 40,
+    environmentalImpact: "Chemical runoff pollutes waterways",
+    ecoPoints: -25,
+    tags: ["laundry", "detergent", "chemical", "conventional"],
+    sustainableAlternative: {
+      productId: 12,
+      name: "Eco-Friendly Laundry Detergent",
+      description: "Plant-based laundry detergent in recyclable packaging",
+      price: 22.99,
+      image: "https://greenfeels.in/cdn/shop/products/3.jpg?v=1662303564",
+      savings: "Reduce chemical pollution and support sustainable farming"
+    }
+  },
+  {
+    id: 10,
+    name: "Plastic Phone Case",
+    description: "Conventional plastic phone case",
+    price: 15.99,
+    category: "tech",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500",
+    rating: 4,
+    reviews: 189,
+    sustainabilityScore: 30,
+    environmentalImpact: "Non-biodegradable plastic waste",
+    ecoPoints: -20,
+    tags: ["phone case", "plastic", "conventional", "tech"],
+    sustainableAlternative: {
+      productId: 10,
+      name: "Biodegradable Phone Case",
+      description: "Protective phone case that naturally decomposes",
+      price: 29.99,
+      image: "https://5.imimg.com/data5/ECOM/Default/2023/4/299074615/ZM/VP/GF/159110959/mandala-edition-biodegradable-eco-friendly-wheat-straw-phone-case-mobile-cover-tech-accessories-a-green-co-32719888187567-500x500.jpg",
+      savings: "Eliminate plastic waste and support biodegradable materials"
+    }
+  }
+]
