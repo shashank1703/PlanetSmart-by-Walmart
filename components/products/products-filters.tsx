@@ -31,14 +31,19 @@ const sortOptions = [
 
 
 
-export default function ProductsFilters() {
-  // Initialize state with default values
-  const [selectedCategory, setSelectedCategory] = useState("all")
-  const [priceRange, setPriceRange] = useState([0, 200])
-  const [sustainabilityRange, setSustainabilityRange] = useState([0, 100])
-  const [selectedBadges, setSelectedBadges] = useState([])
-  const [sortBy, setSortBy] = useState("featured")
-  
+export default function ProductsFilters({
+  selectedCategory,
+  setSelectedCategory,
+  priceRange,
+  setPriceRange,
+  sustainabilityRange,
+  setSustainabilityRange,
+  selectedBadges,
+  setSelectedBadges,
+  sortBy,
+  setSortBy,
+}) {
+  // Remove local state for filters, keep only expandedSections
   const [expandedSections, setExpandedSections] = useState({
     category: true,
     price: true,

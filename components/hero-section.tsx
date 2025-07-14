@@ -2,8 +2,12 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight, Leaf, Heart, Globe } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { useAuth } from "@/contexts/auth-context"
 
 export default function HeroSection() {
+  const router = useRouter()
+  const { user } = useAuth()
   return (
     <section className="pt-32 pb-20 px-6 text-center">
       <div className="max-w-6xl mx-auto">
@@ -52,6 +56,7 @@ export default function HeroSection() {
             className="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full font-semibold flex items-center space-x-2 shadow-lg hover:shadow-xl transition-all"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => router.push(user ? "/products" : "/login")}
           >
             <span>Start Shopping</span>
             <ArrowRight size={20} />

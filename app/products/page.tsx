@@ -15,7 +15,7 @@ export default function ProductsPage() {
   const [priceRange, setPriceRange] = useState([0, 200])
   const [sustainabilityRange, setSustainabilityRange] = useState([0, 100])
   const [selectedBadges, setSelectedBadges] = useState([])
-  const [sortBy, setSortBy] = useState("featured")
+  const [sortBy, setSortBy] = useState("sustainability")
 
   const filteredProducts = useMemo(() => {
     const filtered = productsData.filter((product) => {
@@ -73,7 +73,7 @@ export default function ProductsPage() {
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="relative z-20">
             <ProductsHeader />
-            
+
             {/* Search Bar */}
             <motion.div
               className="w-full max-w-2xl mx-auto my-6"
