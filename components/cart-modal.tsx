@@ -25,6 +25,8 @@ export default function CartModal() {
     { trees: 0, water: 0 },
   )
 
+  const totalEcoPoints = cartItems.reduce((sum, item) => sum + (item.ecoPoints || 0) * (item.quantity || 1), 0)
+
   return (
     <AnimatePresence>
       {isCartOpen && (
@@ -63,9 +65,16 @@ export default function CartModal() {
               </div>
 
               {cartItems.length > 0 && (
-                <div className="mt-4">
-                  <EcoFarm treeCount={totalImpact.trees} waterSaved={totalImpact.water} />
-                </div>
+                <>
+                  <div className="mt-4">
+                    <EcoFarm treeCount={totalImpact.trees} waterSaved={totalImpact.water} />
+                  </div>
+                  <div className="flex justify-center items-center mt-2">
+                    <span className="text-green-50 font-semibold text-base flex items-center gap-2">
+                      🌱 Eco Points Earned: <span className="bg-green-100 text-green-700 rounded-full px-2 py-1 ml-2 text-base">+{totalEcoPoints}</span>
+                    </span>
+                  </div>
+                </>
               )}
             </div>
 
