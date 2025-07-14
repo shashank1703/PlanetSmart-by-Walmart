@@ -80,7 +80,7 @@ const rewards = [
   {
     id: 9,
     title: "Eco Ambassador",
-    description: "Become an official EcoTrust ambassador",
+    description: "Become an official PlanetSmart ambassador",
     points: 2000,
     icon: "🏆",
     category: "status",

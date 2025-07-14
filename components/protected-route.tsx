@@ -38,7 +38,7 @@ export default function ProtectedRoute({ children, requireAuth = true }: Protect
           >
             <Leaf className="text-green-600" size={48} />
           </motion.div>
-          <p className="text-green-700 font-medium">Loading EcoTrust...</p>
+          <p className="text-green-700 font-medium">Loading PlanetSmart...</p>
         </motion.div>
       </div>
     )

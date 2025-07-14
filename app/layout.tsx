@@ -15,7 +15,7 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "EcoTrust - Sustainable Shopping Platform",
+  title: "PlanetSmart By Walmart - Sustainable Shopping Platform",
   description: "Shop eco-friendly products and track your environmental impact",
     generator: 'Shashank Bhargava'
 }

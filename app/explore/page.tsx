@@ -54,7 +54,7 @@ export default function ExplorePage() {
           {/* Impact Summary */}
           <Card className="mb-8 bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-red-700 text-2xl">
+              <CardTitle className="flex items-center gap-2 text-red-600 text-2xl">
                 <AlertTriangle className="h-6 w-6" />
                 Your Environmental Impact
               </CardTitle>
@@ -65,7 +65,7 @@ export default function ExplorePage() {
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center bg-red-50/50 rounded-xl p-4 border border-red-200">
-                  <div className="text-3xl font-bold text-red-600">-285</div>
+                  <div className="text-3xl font-bold text-red-500">-285</div>
                   <div className="text-sm text-gray-600">Eco Points Lost</div>
                 </div>
                 <div className="text-center bg-orange-50/50 rounded-xl p-4 border border-orange-200">
@@ -73,7 +73,7 @@ export default function ExplorePage() {
                   <div className="text-sm text-gray-600">Plastic Items Used</div>
                 </div>
                 <div className="text-center bg-red-50/50 rounded-xl p-4 border border-red-200">
-                  <div className="text-3xl font-bold text-red-600">$1,200+</div>
+                  <div className="text-3xl font-bold text-red-500">$1,200+</div>
                   <div className="text-sm text-gray-600">Annual Waste Cost</div>
                 </div>
               </div>
@@ -129,8 +129,8 @@ export default function ExplorePage() {
                         <p className="text-sm text-gray-600">{item.environmentalImpact}</p>
                         
                         <div className="flex items-center justify-between">
-                          <span className="text-lg font-bold text-red-600">${item.price}</span>
-                          <Badge variant="outline" className="text-red-600 border-red-300">
+                          <span className="text-lg font-bold text-red-500">${item.price}</span>
+                          <Badge variant="outline" className="text-red-500 border-red-200">
                             -{Math.abs(item.ecoPoints)} Eco Points
                           </Badge>
                         </div>
@@ -161,7 +161,7 @@ export default function ExplorePage() {
                             </div>
                             <Button 
                               size="sm" 
-                              className="w-full mt-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700"
+                              className="w-full mt-2 bg-green-500 hover:bg-green-600 text-white"
                               asChild
                             >
                               <Link href={`/products#product-${alternative.id}`}>
@@ -223,7 +223,7 @@ export default function ExplorePage() {
                       </div>
 
                       <Button 
-                        className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700"
+                        className="w-full bg-green-500 hover:bg-green-600 text-white"
                         asChild
                       >
                         <Link href={`/products#product-${product.id}`}>
@@ -249,7 +249,7 @@ export default function ExplorePage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
-              <Button size="lg" className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700" asChild>
+              <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white" asChild>
                 <Link href="/products">
                   Browse Sustainable Products
                   <ArrowRight className="h-4 w-4 ml-2" />

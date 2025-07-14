@@ -67,25 +67,41 @@ const Tree3D = ({ position, level, onClick, isPreview }) => {
   return (
     <group position={position} onClick={onClick}>
       <group ref={meshRef} scale={[scale, scale, scale]}>
-        {/* Tree trunk */}
+        {/* Tree trunk with rich wood texture */}
         <Cylinder args={[0.15, 0.2, 1.2]} position={[0, 0.6, 0]}>
-          <meshLambertMaterial color="#8B4513" />
+          <meshPhongMaterial 
+            color="#8B6B4D"
+            shininess={10}
+            specular="#3D2B1F"
+          />
         </Cylinder>
 
-        {/* Tree foliage - multiple levels */}
+        {/* Tree foliage with gradient colors */}
         <Cone args={[1.0, 1.8]} position={[0, 1.8, 0]}>
-          <meshLambertMaterial color="#228B22" />
+          <meshPhongMaterial 
+            color="#2D5A27"
+            shininess={15}
+            specular="#4A7A43"
+          />
         </Cone>
 
         {level > 1 && (
           <Cone args={[0.8, 1.4]} position={[0, 2.6, 0]}>
-            <meshLambertMaterial color="#32CD32" />
+            <meshPhongMaterial 
+              color="#3B7A33"
+              shininess={20}
+              specular="#589A4F"
+            />
           </Cone>
         )}
 
         {level > 2 && (
           <Cone args={[0.6, 1.0]} position={[0, 3.2, 0]}>
-            <meshLambertMaterial color="#90EE90" />
+            <meshPhongMaterial 
+              color="#4A9A3F"
+              shininess={25}
+              specular="#67BA5B"
+            />
           </Cone>
         )}
       </group>
@@ -116,32 +132,58 @@ const WaterWell3D = ({ position, level, onClick, isPreview }) => {
   return (
     <group position={position} onClick={onClick}>
       <group scale={[scale, scale, scale]}>
-        {/* Well structure */}
+        {/* Well structure with stone texture */}
         <Cylinder args={[0.9, 0.9, 0.4]} position={[0, 0.2, 0]}>
-          <meshLambertMaterial color="#A0522D" />
+          <meshPhongMaterial 
+            color="#8B7765"
+            shininess={5}
+            specular="#463E37"
+          />
         </Cylinder>
 
-        {/* Water surface */}
+        {/* Water surface with realistic effect */}
         <Cylinder ref={waterRef} args={[0.8, 0.8, 0.05]} position={[0, 0.42, 0]}>
-          <meshLambertMaterial color="#4682B4" transparent opacity={0.8} />
+          <meshPhongMaterial 
+            color="#3E8EBC"
+            transparent 
+            opacity={0.85}
+            shininess={90}
+            specular="#FFFFFF"
+          />
         </Cylinder>
 
-        {/* Well rim */}
+        {/* Well rim with weathered stone look */}
         <Cylinder args={[1.0, 1.0, 0.15]} position={[0, 0.47, 0]}>
-          <meshLambertMaterial color="#696969" />
+          <meshPhongMaterial 
+            color="#7A7067"
+            shininess={15}
+            specular="#464241"
+          />
         </Cylinder>
 
-        {/* Well roof (higher levels) */}
+        {/* Well roof with enhanced wood texture */}
         {level > 1 && (
           <group>
             <Cylinder args={[0.05, 0.05, 1.5]} position={[-0.7, 1.2, 0]}>
-              <meshLambertMaterial color="#8B4513" />
+              <meshPhongMaterial 
+                color="#8B6B4D"
+                shininess={10}
+                specular="#3D2B1F"
+              />
             </Cylinder>
             <Cylinder args={[0.05, 0.05, 1.5]} position={[0.7, 1.2, 0]}>
-              <meshLambertMaterial color="#8B4513" />
+              <meshPhongMaterial 
+                color="#8B6B4D"
+                shininess={10}
+                specular="#3D2B1F"
+              />
             </Cylinder>
             <Cone args={[0.8, 0.6]} position={[0, 2.1, 0]}>
-              <meshLambertMaterial color="#CD853F" />
+              <meshPhongMaterial 
+                color="#B38B6D"
+                shininess={15}
+                specular="#8B7355"
+              />
             </Cone>
           </group>
         )}
@@ -172,33 +214,57 @@ const SolarPanel3D = ({ position, level, onClick, isPreview }) => {
   return (
     <group position={position} onClick={onClick}>
       <group ref={meshRef} scale={[scale, scale, scale]}>
-        {/* Solar panel base */}
+        {/* Solar panel base with metallic finish */}
         <Cylinder args={[0.12, 0.12, 1.2]} position={[0, 0.6, 0]}>
-          <meshLambertMaterial color="#C0C0C0" />
+          <meshPhongMaterial 
+            color="#B8B8B8"
+            shininess={60}
+            specular="#FFFFFF"
+          />
         </Cylinder>
 
-        {/* Solar panel */}
+        {/* Solar panel with modern blue-black finish */}
         <Box args={[1.8, 0.12, 1.2]} position={[0, 1.4, 0]} rotation={[0, 0, 0.15]}>
-          <meshLambertMaterial color="#191970" />
+          <meshPhongMaterial 
+            color="#1C1C2E"
+            shininess={100}
+            specular="#4B4BA3"
+          />
         </Box>
 
-        {/* Panel grid lines */}
+        {/* Panel grid lines with metallic accent */}
         <Box args={[1.8, 0.13, 0.02]} position={[0, 1.4, 0]} rotation={[0, 0, 0.15]}>
-          <meshLambertMaterial color="#000080" />
+          <meshPhongMaterial 
+            color="#2E2E5C"
+            shininess={90}
+            specular="#6B6BC3"
+          />
         </Box>
         <Box args={[0.02, 0.13, 1.2]} position={[0, 1.4, 0]} rotation={[0, 0, 0.15]}>
-          <meshLambertMaterial color="#000080" />
+          <meshPhongMaterial 
+            color="#2E2E5C"
+            shininess={90}
+            specular="#6B6BC3"
+          />
         </Box>
 
         {level > 1 && (
           <Box args={[1.8, 0.12, 1.2]} position={[0, 1.7, 0]} rotation={[0, 0, -0.15]}>
-            <meshLambertMaterial color="#4169E1" />
+            <meshPhongMaterial 
+              color="#2A2A4F"
+              shininess={95}
+              specular="#5959B3"
+            />
           </Box>
         )}
 
         {level > 2 && (
           <Box args={[1.8, 0.12, 1.2]} position={[0, 2.0, 0]} rotation={[0, 0, 0]}>
-            <meshLambertMaterial color="#6495ED" />
+            <meshPhongMaterial 
+              color="#383870"
+              shininess={85}
+              specular="#6767C3"
+            />
           </Box>
         )}
       </group>
@@ -228,44 +294,80 @@ const EcoHome3D = ({ position, level, onClick, isPreview }) => {
   return (
     <group position={position} onClick={onClick}>
       <group ref={meshRef} scale={[scale, scale, scale]}>
-        {/* House base */}
+        {/* House base with enhanced modern eco-friendly look */}
         <Box args={[1.8, 1.2, 1.8]} position={[0, 0.6, 0]}>
-          <meshLambertMaterial color="#DEB887" />
+          <meshPhongMaterial 
+            color="#F5E6D3"
+            shininess={35}
+            specular="#D4C4A7"
+          />
         </Box>
 
-        {/* Roof */}
+        {/* Roof with natural wood finish */}
         <Cone args={[1.4, 1.0]} position={[0, 1.6, 0]} rotation={[0, Math.PI / 4, 0]}>
-          <meshLambertMaterial color="#8B4513" />
+          <meshPhongMaterial 
+            color="#8B6B4D"
+            shininess={20}
+            specular="#3D2B1F"
+          />
         </Cone>
 
-        {/* Windows */}
+        {/* Windows with brown wooden frames */}
         <Box args={[0.35, 0.35, 0.02]} position={[-0.5, 0.7, 0.91]}>
-          <meshLambertMaterial color="#87CEEB" />
+          <meshPhongMaterial 
+            color="#8B4513"
+            shininess={80}
+            specular="#4A2511"
+            opacity={0.95}
+            transparent
+          />
         </Box>
         <Box args={[0.35, 0.35, 0.02]} position={[0.5, 0.7, 0.91]}>
-          <meshLambertMaterial color="#87CEEB" />
+          <meshPhongMaterial 
+            color="#8B4513"
+            shininess={80}
+            specular="#4A2511"
+            opacity={0.95}
+            transparent
+          />
         </Box>
 
-        {/* Door */}
+        {/* Door with rich wood texture */}
         <Box args={[0.35, 0.7, 0.02]} position={[0, 0.35, 0.91]}>
-          <meshLambertMaterial color="#654321" />
+          <meshPhongMaterial 
+            color="#855E42"
+            shininess={30}
+            specular="#2E1810"
+          />
         </Box>
 
-        {/* Chimney (level 2+) */}
+        {/* Chimney with stone texture */}
         {level > 1 && (
           <Box args={[0.2, 0.6, 0.2]} position={[0.6, 2.3, 0.6]}>
-            <meshLambertMaterial color="#8B4513" />
+            <meshPhongMaterial 
+              color="#8B7765"
+              shininess={15}
+              specular="#463E37"
+            />
           </Box>
         )}
 
-        {/* Garden (level 3) */}
+        {/* Garden with lush green */}
         {level > 2 && (
           <group>
             <Cylinder args={[0.3, 0.3, 0.1]} position={[-1.2, 0.05, 1.2]}>
-              <meshLambertMaterial color="#228B22" />
+              <meshPhongMaterial 
+                color="#3B7A33"
+                shininess={20}
+                specular="#589A4F"
+              />
             </Cylinder>
             <Cylinder args={[0.3, 0.3, 0.1]} position={[1.2, 0.05, 1.2]}>
-              <meshLambertMaterial color="#228B22" />
+              <meshPhongMaterial 
+                color="#3B7A33"
+                shininess={20}
+                specular="#589A4F"
+              />
             </Cylinder>
           </group>
         )}
@@ -295,37 +397,65 @@ const WindTurbine3D = ({ position, level, onClick, isPreview }) => {
   return (
     <group position={position} onClick={onClick}>
       <group scale={[scale, scale, scale]}>
-        {/* Tower */}
+        {/* Tower with metallic finish */}
         <Cylinder args={[0.08, 0.15, 2.5]} position={[0, 1.25, 0]}>
-          <meshLambertMaterial color="#E5E5E5" />
+          <meshPhongMaterial 
+            color="#D8D8D8"
+            shininess={80}
+            specular="#FFFFFF"
+          />
         </Cylinder>
 
-        {/* Nacelle */}
+        {/* Nacelle with sleek modern look */}
         <Box args={[0.4, 0.25, 1.0]} position={[0, 2.6, 0]}>
-          <meshLambertMaterial color="#FFFFFF" />
+          <meshPhongMaterial 
+            color="#F0F0F0"
+            shininess={90}
+            specular="#FFFFFF"
+          />
         </Box>
 
-        {/* Blades */}
+        {/* Blades with aerodynamic finish */}
         <group ref={bladesRef} position={[0, 2.6, 0.5]}>
           <Box args={[0.08, 1.8, 0.04]} position={[0, 0.9, 0]}>
-            <meshLambertMaterial color="#F5F5F5" />
+            <meshPhongMaterial 
+              color="#FAFAFA"
+              shininess={70}
+              specular="#E0E0E0"
+            />
           </Box>
           <Box args={[0.08, 1.8, 0.04]} position={[0, -0.9, 0]} rotation={[0, 0, Math.PI]}>
-            <meshLambertMaterial color="#F5F5F5" />
+            <meshPhongMaterial 
+              color="#FAFAFA"
+              shininess={70}
+              specular="#E0E0E0"
+            />
           </Box>
           <Box args={[1.8, 0.08, 0.04]} position={[0.9, 0, 0]} rotation={[0, 0, Math.PI / 2]}>
-            <meshLambertMaterial color="#F5F5F5" />
+            <meshPhongMaterial 
+              color="#FAFAFA"
+              shininess={70}
+              specular="#E0E0E0"
+            />
           </Box>
         </group>
 
-        {/* Additional turbines for higher levels */}
+        {/* Additional turbines with matching finish */}
         {level > 1 && (
           <group position={[3, 0, 0]}>
             <Cylinder args={[0.06, 0.12, 2.0]} position={[0, 1.0, 0]}>
-              <meshLambertMaterial color="#E5E5E5" />
+              <meshPhongMaterial 
+                color="#D8D8D8"
+                shininess={80}
+                specular="#FFFFFF"
+              />
             </Cylinder>
             <Box args={[0.3, 0.2, 0.8]} position={[0, 2.1, 0]}>
-              <meshLambertMaterial color="#FFFFFF" />
+              <meshPhongMaterial 
+                color="#F0F0F0"
+                shininess={90}
+                specular="#FFFFFF"
+              />
             </Box>
           </group>
         )}
@@ -372,23 +502,29 @@ const GridTile3D = ({ tile, onTileClick, previewAsset, isPreview }) => {
 
   return (
     <group>
-      {/* Ground tile */}
+      {/* Ground tile with bright green texture */}
       <Box ref={meshRef} args={[2.0, 0.1, 2.0]} position={[x, -0.05, z]} onClick={() => onTileClick(tile)}>
-        <meshLambertMaterial color={tile.type ? "#90EE90" : "#98FB98"} transparent opacity={isPreview ? 0.7 : 1.0} />
+        <meshPhongMaterial
+          color={tile.type ? "#338020" : "#57c239"}
+          transparent
+          opacity={isPreview ? 0.7 : 1.0}
+          shininess={30}
+          specular={"#ffffff"}
+        />
       </Box>
 
-      {/* Tile border */}
+      {/* Tile border with warm brown color */}
       <Box args={[2.0, 0.02, 0.05]} position={[x, 0.01, z + 1.0]}>
-        <meshLambertMaterial color="#228B22" />
+        <meshPhongMaterial color="#6a4933" shininess={20} />
       </Box>
       <Box args={[2.0, 0.02, 0.05]} position={[x, 0.01, z - 1.0]}>
-        <meshLambertMaterial color="#228B22" />
+        <meshPhongMaterial color="#6a4933" shininess={20} />
       </Box>
       <Box args={[0.05, 0.02, 2.0]} position={[x + 1.0, 0.01, z]}>
-        <meshLambertMaterial color="#228B22" />
+        <meshPhongMaterial color="#6a4933" shininess={20} />
       </Box>
       <Box args={[0.05, 0.02, 2.0]} position={[x - 1.0, 0.01, z]}>
-        <meshLambertMaterial color="#228B22" />
+        <meshPhongMaterial color="#6a4933" shininess={20} />
       </Box>
 
       {/* Asset or preview */}
@@ -413,12 +549,12 @@ const GridTile3D = ({ tile, onTileClick, previewAsset, isPreview }) => {
 const EcoLandScene = ({ grid, onTileClick, previewTile, selectedAsset }) => {
   return (
     <>
-      {/* Natural lighting setup */}
-      <ambientLight intensity={0.6} color="#ffffff" />
+      {/* Enhanced lighting setup */}
+      <ambientLight intensity={0.5} color="#ffffff" />
       <directionalLight
         position={[10, 15, 5]}
-        intensity={0.8}
-        color="#ffffff"
+        intensity={0.9}
+        color="#fdfbf4"
         castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
@@ -428,7 +564,7 @@ const EcoLandScene = ({ grid, onTileClick, previewTile, selectedAsset }) => {
         shadow-camera-top={20}
         shadow-camera-bottom={-20}
       />
-      <directionalLight position={[-5, 10, -5]} intensity={0.3} color="#87CEEB" />
+      <directionalLight position={[-5, 10, -5]} intensity={0.4} color="#e6f3ff" />
 
       {/* Grid tiles */}
       {grid.map((tile) => (
@@ -441,10 +577,14 @@ const EcoLandScene = ({ grid, onTileClick, previewTile, selectedAsset }) => {
         />
       ))}
 
-      {/* Ground plane */}
+      {/* Enhanced ground plane with matching green */}
       <mesh position={[0, -0.2, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
         <planeGeometry args={[30, 30]} />
-        <meshLambertMaterial color="#F0FFF0" />
+        <meshPhongMaterial 
+          color="#65e042"
+          shininess={10}
+          specular="#338020"
+        />
       </mesh>
 
       {/* Environment for realistic lighting */}

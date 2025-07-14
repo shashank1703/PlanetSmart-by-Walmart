@@ -82,7 +82,7 @@ export default function Navigation() {
         {/* Logo */}
         <motion.div className="flex items-center space-x-2 cursor-pointer" whileHover={{ scale: 1.05 }} onClick={() => window.location.href = "/"}>
           <Leaf className="text-green-600" size={24} />
-          <span className="text-green-700 text-xl font-bold">EcoTrust</span>
+          <span className="text-green-700 text-xl font-serif">PlanetSmart By Walmart</span>
         </motion.div>
 
         {/* Navigation Icons */}
@@ -172,7 +172,7 @@ export default function Navigation() {
                         <div className="font-medium text-green-800">{user.name}</div>
                         <div className="text-sm text-green-600">{user.email}</div>
                         <div className="text-xs text-green-500 mt-1">
-                          {user.ecoPoints} EcoPoints
+                          {user.ecoPoints} PlanetSmart Points
                         </div>
                         <div className="text-xs text-green-500">
                           Member since {user.joinDate}

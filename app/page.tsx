@@ -7,7 +7,7 @@ import ProductGrid from "@/components/product-grid"
 import EcoPointsRewards from "@/components/eco-points-rewards"
 import ProtectedRoute from "@/components/protected-route"
 
-export default function EcoTrustPlatform() {
+export default function PlanetSmartPlatform() {
   const { user } = useAuth()
 
   // Landing page for unauthenticated users
