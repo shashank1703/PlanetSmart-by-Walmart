@@ -9,9 +9,15 @@ import { nonEcoProductsData } from "@/data/non-eco-products-data"
 import { productsData } from "@/data/products-data"
 import ProtectedRoute from "@/components/protected-route"
 import Link from "next/link"
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { useCart } from "@/contexts/cart-context"
+import ConfettiAnimation from "@/components/confetti-animation"
 
 export default function ExplorePage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
+  const { addToCart } = useCart();
+  const [openDialogId, setOpenDialogId] = useState<number | null>(null);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   // Simulate user's previous purchases (in a real app, this would come from user data)
   const userPreviousPurchases = nonEcoProductsData.slice(0, 10)
@@ -159,16 +165,45 @@ export default function ExplorePage() {
                                 </div>
                               </div>
                             </div>
-                            <Button 
-                              size="sm" 
-                              className="w-full mt-2 bg-green-500 hover:bg-green-600 text-white"
-                              asChild
-                            >
-                              <Link href={`/products#product-${alternative.id}`}>
-                                View Alternative
-                                <ArrowRight className="h-4 w-4 ml-1" />
-                              </Link>
-                            </Button>
+                            <Dialog open={openDialogId === alternative.id} onOpenChange={open => setOpenDialogId(open ? alternative.id : null)}>
+                              <DialogTrigger asChild>
+                                <Button 
+                                  size="sm" 
+                                  className="w-full mt-2 bg-green-500 hover:bg-green-600 text-white"
+                                  onClick={() => setOpenDialogId(alternative.id)}
+                                >
+                                  View Alternative
+                                  <ArrowRight className="h-4 w-4 ml-1" />
+                                </Button>
+                              </DialogTrigger>
+                              <DialogContent>
+                                <DialogHeader>
+                                  <DialogTitle>{alternative.name}</DialogTitle>
+                                  <DialogDescription>{alternative.description}</DialogDescription>
+                                </DialogHeader>
+                                <div className="flex flex-col items-center gap-4 py-4 relative">
+                                  <img src={alternative.image} alt={alternative.name} className="w-32 h-32 object-cover rounded-lg" />
+                                  <div className="flex items-center gap-4">
+                                    <span className="text-lg font-bold text-green-700">${alternative.price}</span>
+                                    <Badge className="bg-green-600 text-white text-xs">+{alternative.ecoPoints} Eco Points</Badge>
+                                  </div>
+                                  <Button
+                                    className="w-full bg-green-500 hover:bg-green-600 text-white"
+                                    onClick={async () => {
+                                      setShowConfetti(true);
+                                      addToCart(alternative);
+                                      setTimeout(() => {
+                                        setShowConfetti(false);
+                                        setOpenDialogId(null);
+                                      }, 2000);
+                                    }}
+                                  >
+                                    Add to Cart
+                                  </Button>
+                                  {showConfetti && <ConfettiAnimation />}
+                                </div>
+                              </DialogContent>
+                            </Dialog>
                           </div>
                         )}
                       </div>
